@@ -26,6 +26,12 @@ input[type="checkbox"] {
   width: 1.4em;
 }
 
+.card-description {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .file-input {
   display: flex;
   font-size: 0;
