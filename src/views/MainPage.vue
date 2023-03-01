@@ -9,6 +9,7 @@
     price: number;
     category: string;
     image: string;
+    description: string;
   };
 
   export default {
@@ -71,7 +72,7 @@
 
 <template>
   <menu-bar />
-  <div class="container max-w-4xl my-4 text-center overflow-x-auto">
+  <div class="container max-w-4xl my-4 text-center">
     <button
       class="btn btn-md mb-4 text-center cursor-pointer text-white bg-red-500 hover:bg-red-700 transition duration-100 ease-in-out rounded-md"
       @click="deleteResource()">
@@ -87,54 +88,30 @@
           stroke-linejoin="round"
           d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5m6 4.125l2.25 2.25m0 0l2.25 2.25M12 13.875l2.25-2.25M12 13.875l-2.25 2.25M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
       </svg>
-      Apagar múltiplos
+      Exclusão múltipla
     </button>
-    <table id="tb_products" class="table w-full shadow-2xl">
-      <thead>
-        <tr>
-          <th>
-            <input
-              id="cb_products"
-              type="checkbox"
-              class="checkbox"
-              name="cb_products"
-              @change="toggleAll()" />
-          </th>
-          <th class="text-xl">Imagem</th>
-          <th class="text-xl">Produto</th>
-          <th class="text-xl">Categoria</th>
-          <th class="text-xl">Preço</th>
-          <th class="text-xl">Ações</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="(product, key) in products" :key="key">
-          <td>
-            <input
-              :id="String(product.id)"
-              type="checkbox"
-              class="checkbox rounded-md"
-              :checked="(allChecked as boolean)"
-              @change="toggleSelect(product.id)" />
-          </td>
-          <td>
-            <div class="flex items-center space-x-3">
-              <div class="avatar">
-                <div class="mask mask-squircle w-16 h-16 px-2">
-                  <img
-                    height="24"
-                    :src="`http://localhost:8000/storage/${product.image}`"
-                    class="h-12 rounded-md" />
-                </div>
-              </div>
-            </div>
-          </td>
-          <td class="font-bold">
-            {{ product.name }}
-          </td>
-          <td>{{ product.category }}</td>
-          <td>R$ {{ product.price.toFixed(2) }}</td>
-          <td>
+
+    <div id="tb_products" class="grid grid-cols-2 w-full">
+      <div
+        v-for="(product, key) in products"
+        :key="key"
+        class="card card-compact w-96 bg-base-100 my-4 shadow-xl">
+        <figure>
+          <img
+            :src="`http://localhost:8000/storage/${product.image}`"
+            alt="Product image" />
+        </figure>
+        <div class="card-body">
+          <input
+            :id="String(product.id)"
+            type="checkbox"
+            class="checkbox rounded-md"
+            :checked="(allChecked as boolean)"
+            @change="toggleSelect(product.id)" />
+          <h2 class="card-title">{{ product.name }}</h2>
+          <h2 class="text-bold text-lg">R$ {{ product.price.toFixed(2) }}</h2>
+          <p class="card-description">{{ product.description }}</p>
+          <div class="card-actions justify-end">
             <router-link :to="`/product/edit/${product.id}`">
               <button
                 class="btn btn-xs w-10 h-10 text-center cursor-pointer text-white bg-blue-500 hover:bg-blue-700 transition duration-100 ease-in-out rounded-md">
@@ -151,7 +128,7 @@
               </button>
             </router-link>
             <button
-              class="btn btn-xs ml-2 w-10 h-10 text-center cursor-pointer text-white bg-red-500 hover:bg-red-700 transition duration-100 ease-in-out rounded-md"
+              class="btn btn-xs w-10 h-10 text-center cursor-pointer text-white bg-red-500 hover:bg-red-700 transition duration-100 ease-in-out rounded-md"
               @click.prevent="deleteItem(product.id)">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -164,10 +141,23 @@
                   clip-rule="evenodd" />
               </svg>
             </button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--
+            <input
+              id="cb_products"
+              type="checkbox"
+              class="checkbox"
+              name="cb_products"
+              @change="toggleAll()" />
+          <th class="text-xl">Imagem</th>
+          <th class="text-xl">Produto</th>
+          <th class="text-xl">Categoria</th>
+          <th class="text-xl">Preço</th>
+          <th class="text-xl">Ações</th>
+    -->
   </div>
   <div class="p-4 text-center text-base text-white font-bold">
     <p>
