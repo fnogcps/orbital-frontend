@@ -71,7 +71,7 @@
           type="text"
           name="category"
           class="mt-1 block w-72 rounded-md border-gray-300 shadow-sm focus:border-slate-400 focus:ring focus:ring-slate-300 focus:ring-opacity-50"
-          placeholder="ex: Alimentos" />
+          placeholder="ex: Cosméticos" />
       </label>
       <label class="py-2 text-left">
         <span class="antialiased text-lg font-bold text-gray-700">Imagem</span>
@@ -83,6 +83,13 @@
         <label class="label">
           <small class="label-text-alt">Formatos aceitos: png, jpg, jpeg</small>
         </label>
+      </label>
+      <label class="py-2">
+        <textarea
+          id="description"
+          name="description"
+          placeholder="Descrição"
+          class="textarea textarea-md shadow-sm border-gray-300 focus:border-slate-400 focus:ring focus:ring-slate-300 focus:ring-opacity-50 w-full max-w-xs"></textarea>
       </label>
       <button
         class="btn gap-2 w-72 rounded-md text-sm text-center text-gray-100 font-semibold uppercase transition duration-200 ease-in-out cursor-pointer hover:bg-gray-800">

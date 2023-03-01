@@ -10,6 +10,7 @@
     price: number;
     category: string;
     image: string;
+    description: string;
   };
 
   export default {
@@ -89,7 +90,7 @@
           name="category"
           :value="product.category"
           class="mt-1 block w-72 rounded-md border-gray-300 shadow-sm focus:border-slate-400 focus:ring focus:ring-slate-300 focus:ring-opacity-50"
-          placeholder="ex: Alimentos" />
+          placeholder="ex: Cosméticos" />
       </label>
       <label class="py-2 text-left">
         <span class="antialiased text-lg font-bold text-gray-700">Imagem</span>
@@ -101,6 +102,14 @@
         <label class="label">
           <small class="label-text-alt">Formatos aceitos: png, jpg, jpeg</small>
         </label>
+      </label>
+      <label class="py-2">
+        <textarea
+          id="description"
+          name="description"
+          :value="product.description"
+          placeholder="Descrição"
+          class="textarea textarea-md shadow-sm border-gray-300 focus:border-slate-400 focus:ring focus:ring-slate-300 focus:ring-opacity-50 w-full max-w-xs"></textarea>
       </label>
       <input id="_method" name="_method" type="hidden" value="put" />
       <button
