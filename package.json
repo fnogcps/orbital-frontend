@@ -8,7 +8,7 @@
     "build-report": "vue-cli-service build --report",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --mode=dev",
-    "vite-dev": "vite",
+    "vite": "vite --port 8001",
     "vite-build": "vite build",
     "vite-preview": "vite preview",
     "lint": "eslint . --ext .ts",
