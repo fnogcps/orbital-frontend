@@ -26,16 +26,6 @@ input[type="checkbox"] {
   width: 1.4em;
 }
 
-img {
-  max-width: 72px;
-  max-height: 72px;
-}
-
-.avatar img {
-  height: auto;
-  width: auto;
-}
-
 .file-input {
   display: flex;
   font-size: 0;
@@ -43,6 +33,7 @@ img {
   padding-right: 0;
 }
 
-li a, li button {
-  font-size: 1.10em;
+li a,
+li button {
+  font-size: 1.1em;
 }
