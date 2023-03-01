@@ -1,5 +1,5 @@
 <template>
-  <div class="container max-w-4xl mt-4 text-center overflow-x-auto">
+  <div class="container max-w-4xl my-6 text-center overflow-x-auto">
     <ul class="menu menu-horizontal bg-base-100 p-2 mt-4 shadow-lg rounded-lg">
       <li>
         <router-link to="/dashboard">
