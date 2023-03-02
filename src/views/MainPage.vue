@@ -95,23 +95,28 @@
       <div
         v-for="(product, key) in products"
         :key="key"
-        class="card card-compact w-96 bg-base-100 my-4 shadow-xl">
+        class="card card-compact w-96 bg-base-100 py-6 my-4 shadow-xl">
+        <input
+          :id="String(product.id)"
+          type="checkbox"
+          class="checkbox rounded-sm"
+          :checked="(allChecked as boolean)"
+          @change="toggleSelect(product.id)" />
         <figure>
           <img
             :src="`http://localhost:8000/storage/${product.image}`"
             alt="Product image" />
         </figure>
-        <div class="card-body">
-          <input
-            :id="String(product.id)"
-            type="checkbox"
-            class="checkbox rounded-md"
-            :checked="(allChecked as boolean)"
-            @change="toggleSelect(product.id)" />
-          <h2 class="card-title">{{ product.name }}</h2>
-          <h2 class="text-bold text-lg">R$ {{ product.price.toFixed(2) }}</h2>
+        <div class="card-body mt-4">
+          <h2 class="card-title text-2xl">
+            {{ product.name }}
+            <div class="badge">{{ product.category }}</div>
+          </h2>
           <p class="card-description">{{ product.description }}</p>
-          <div class="card-actions justify-end">
+          <div class="card-actions justify-end mt-8">
+            <h2 class="text-bold text-2xl card-price">
+              R$ {{ product.price.toFixed(2) }}
+            </h2>
             <router-link :to="`/product/edit/${product.id}`">
               <button
                 class="btn btn-xs w-10 h-10 text-center cursor-pointer text-white bg-blue-500 hover:bg-blue-700 transition duration-100 ease-in-out rounded-md">
@@ -145,25 +150,13 @@
         </div>
       </div>
     </div>
-    <!--
-            <input
-              id="cb_products"
-              type="checkbox"
-              class="checkbox"
-              name="cb_products"
-              @change="toggleAll()" />
-          <th class="text-xl">Imagem</th>
-          <th class="text-xl">Produto</th>
-          <th class="text-xl">Categoria</th>
-          <th class="text-xl">Preço</th>
-          <th class="text-xl">Ações</th>
-    -->
   </div>
-  <div class="p-4 text-center text-base text-white font-bold">
+  <div
+    class="container w-60 text-center text-lg font-bold p-4 backdrop-blur-xl text-slate-700 bg-white/50 shadow-md rounded-md">
     <p>
-      Made by
+      Made by<br />
       <a
-        class="text-indigo-200"
+        class="text-[#148854]"
         href="https://github.com/fnogcps"
         target="_blank"
         >Felipe Nogueira</a

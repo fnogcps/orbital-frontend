@@ -24,12 +24,27 @@ html {
 input[type="checkbox"] {
   height: 1.4em;
   width: 1.4em;
+  padding: 0.8em;
+  margin-left: 1rem;
+  background-color: #eee;
+}
+
+img {
+  max-width: 50%;
 }
 
 .card-description {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.card-compact .card-body {
+  padding: 0 20px 0 20px;
+}
+
+.card-price {
+  margin-right: auto;
 }
 
 .file-input {
