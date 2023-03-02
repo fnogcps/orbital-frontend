@@ -113,7 +113,7 @@
             <div class="badge">{{ product.category }}</div>
           </h2>
           <p class="card-description">{{ product.description }}</p>
-          <div class="card-actions justify-end mt-8">
+          <div class="card-actions justify-end mx-4">
             <h2 class="text-bold text-2xl card-price">
               R$ {{ product.price.toFixed(2) }}
             </h2>
@@ -150,17 +150,5 @@
         </div>
       </div>
     </div>
-  </div>
-  <div
-    class="container w-60 text-center text-lg font-bold p-4 backdrop-blur-xl text-slate-700 bg-white/50 shadow-md rounded-md">
-    <p>
-      Made by<br />
-      <a
-        class="text-[#148854]"
-        href="https://github.com/fnogcps"
-        target="_blank"
-        >Felipe Nogueira</a
-      >
-    </p>
   </div>
 </template>

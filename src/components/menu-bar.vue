@@ -1,5 +1,17 @@
 <template>
   <div class="container max-w-4xl my-6 text-center overflow-x-auto">
+    <div
+      class="container w-fit text-center text-md font-bold px-6 py-4 backdrop-blur-xl text-slate-700 bg-white/100 shadow-md rounded-md">
+      <p>
+        Made by
+        <a
+          class="text-[#148854]"
+          href="https://github.com/fnogcps"
+          target="_blank"
+          >Felipe Nogueira</a
+        >
+      </p>
+    </div>
     <ul class="menu menu-horizontal bg-base-100 p-2 mt-4 shadow-lg rounded-lg">
       <li>
         <router-link to="/dashboard">
