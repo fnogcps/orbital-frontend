@@ -100,7 +100,9 @@
           type="file"
           class="file-input file-input-bordered" />
         <label class="label">
-          <small class="label-text-alt">Formatos aceitos: png, jpg, jpeg</small>
+          <small class="label-text-alt"
+            >Formatos aceitos: png, jpg, jpeg, webp</small
+          >
         </label>
       </label>
       <label class="py-2">
