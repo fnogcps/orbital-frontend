@@ -29,7 +29,7 @@
       @submit.prevent="signin">
       <label class="py-2">
         <span class="block antialiased my-3 text-2xl font-bold text-gray-700"
-          >Email address</span
+          >E-mail</span
         >
         <input
           id="email"
@@ -41,7 +41,7 @@
       </label>
       <label class="py-2">
         <span class="block antialiased my-3 text-2xl font-bold text-gray-700"
-          >Password</span
+          >Senha</span
         >
         <input
           id="password"
